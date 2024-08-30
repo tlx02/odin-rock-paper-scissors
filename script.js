@@ -11,3 +11,8 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+function getHumanChoice() {
+    value = prompt("What's your choice? (rock / paper / scissors)");
+    return value.toLowerCase();
+}
