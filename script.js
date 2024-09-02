@@ -15,32 +15,34 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    let result = document.querySelector('#result');
+
     if (humanChoice === computerChoice) {
-        console.log("It's a draw!"); 
+        result.textContent = "It's a draw!"; 
         return;
     }
     if (humanChoice === "rock") {
         if (computerChoice === "paper") {
-            console.log("You lose! Paper beats Rock"); 
+            result.textContent = "You lose! Paper beats Rock"; 
             // computerScore++;
         } else {
-            console.log("You win! Rock beats Scissors"); 
+            result.textContent = "You win! Rock beats Scissors"; 
             // humanScore++;
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors") {
-            console.log("You lose! Scissors beats Paper"); 
+            result.textContent = "You lose! Scissors beats Paper"; 
             // computerScore++;
         } else {
-            console.log("You win! Paper beats Rock"); 
+            result.textContent = "You win! Paper beats Rock"; 
             // humanScore++;
         }
     } else {
         if (computerChoice === "rock") {
-            console.log("You lose! Rock beats Scissors"); 
+            result.textContent = "You lose! Rock beats Scissors"; 
             // computerScore++;
         } else {
-            console.log("You win! Scissors beats Paper"); 
+            result.textContent = "You win! Scissors beats Paper"; 
             // humanScore++;
         }
     }
