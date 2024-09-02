@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     value = Math.random();
     if (value <= 1 / 3) {
@@ -16,35 +19,43 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
     let result = document.querySelector('#result');
+    let score = document.querySelector('#scores');
+    let winner = document.querySelector('#winner');
 
     if (humanChoice === computerChoice) {
         result.textContent = "It's a draw!"; 
-        return;
     }
-    if (humanChoice === "rock") {
+    else if (humanChoice === "rock") {
         if (computerChoice === "paper") {
             result.textContent = "You lose! Paper beats Rock"; 
-            // computerScore++;
+            computerScore++;
         } else {
             result.textContent = "You win! Rock beats Scissors"; 
-            // humanScore++;
+            humanScore++;
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "scissors") {
             result.textContent = "You lose! Scissors beats Paper"; 
-            // computerScore++;
+            computerScore++;
         } else {
             result.textContent = "You win! Paper beats Rock"; 
-            // humanScore++;
+            humanScore++;
         }
     } else {
         if (computerChoice === "rock") {
             result.textContent = "You lose! Rock beats Scissors"; 
-            // computerScore++;
+            computerScore++;
         } else {
             result.textContent = "You win! Scissors beats Paper"; 
-            // humanScore++;
+            humanScore++;
         }
+    }
+    score.textContent = `Your Score: ${humanScore}, Opponent Score: ${computerScore}`
+    if (humanScore == 5) {
+        winner.textContent = "Congratulations! You are the winner!";
+    }
+    if (computerScore == 5) {
+        winner.textContent = "You lost! Try again!";
     }
 }
     
